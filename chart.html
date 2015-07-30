@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type='text/css'>
+    img{
+        margin-top: 20px;
+        margin-left: 450px;
+    }
+    </style>
+    
+
+    <title>Analytics</title>
+    <h1 align='center'>    FLIGHT PRICE ANALYTICS  </h1>
+
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js'></script>
+
+    <script type='text/javascript' src='http://code.jquery.com/ui/1.11.1/jquery-ui.js'></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+    <script type='text/javascript'>
+
+cat_1=[]
+pri_1=[]
+pri2_1=[]
+cat_=[]
+pri_=[]
+pri2_=[]
+cat=[];
+        pri =[];
+        pri2=[];
+    $(function() { $('#container').highcharts({
+        
+            chart:{
+             events: {
+                load: function(){
+                        $.getJSON("data_BOM.json", function(data){
+                            console.log(data);
+                         
+                            
+                            for (var i = 1; i< data.length; i++) {
+                                cat.push(data[i][1]);
+                                pri.push(data[i][0])
+                            };
+                          
+                           $('#container').highcharts().series[0].xAxis.setCategories(cat);
+                            $('#container').highcharts().series[0].setData(pri);
+                            //$('#container').highcharts().series[1].setData(pri2);
+
+                        });
+                        
+                    }
+                }
+            },
+
+
+        title: {
+            text: 'Prices of Flights',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Delhi to Mumbai ',
+            x: -20
+        },
+        xAxis: {
+            categories: []
+        },
+        yAxis: {
+            title: {
+                text: 'Price (Rs.)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ' INR '
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'prices : Yatra',
+            data:[]
+        },
+        {
+            name: 'prices : Expedia',
+            data:[]
+
+        }]
+    });
+});
+
+
+$(function() { $('#container1').highcharts({
+            chart:{
+             events: {
+                load: function(){
+                        $.getJSON("data_CCU.json", function(data){
+                            console.log(data);
+                            
+                            
+                            for (var i = 1; i< data.length; i++) {
+                                cat_.push(data[i][1]);
+                                pri_.push(data[i][0]);
+                            };
+                            
+                            $('#container1').highcharts().series[0].xAxis.setCategories(cat_);
+                            $('#container1').highcharts().series[0].setData(pri_);
+                            //$('#container1').highcharts().series[1].setData(pri2_);
+
+                        });
+
+                    }
+                }
+            },
+
+
+        title: {
+            text: 'Prices of Flights',
+            x: -20 //center
+        },
+        subtitle: {
+            text: ' Route Delhi - Calcutta',
+            x: -20
+        },
+        xAxis: {
+            categories: []
+        },
+        yAxis: {
+            title: {
+                text: 'Price (Rs.)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ' INR '
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'prices : Yatra',
+            data:[]
+        },
+        {
+            name: 'prices : Expedia',
+            data:[]
+
+        }]
+    });
+});
+
+
+
+
+    $(function() { $('#container2').highcharts({
+            chart:{
+             events: {
+                load: function(){
+                        $.getJSON("data.json", function(data){
+                            console.log(data);
+                            
+                            
+                            for (var i = 1; i< data.length; i++) {
+                                cat_1.push(data[i][1]);
+                                pri_1.push(data[i][0])
+                            };
+                            
+                           $('#container2').highcharts().series[0].xAxis.setCategories(cat_1);
+                            $('#container2').highcharts().series[0].setData(pri_1);
+                            //$('#container2').highcharts().series[1].setData(pri2_1);
+
+                        });
+
+                    }
+                }
+            },
+
+
+        title: {
+            text: 'Prices of Flights',
+            x: -20 //center
+        },
+        subtitle: {
+            text: ' Route Delhi - Bangalore',
+            x: -20
+        },
+        xAxis: {
+            categories: []
+        },
+        yAxis: {
+            title: {
+                text: 'Price (Rs.)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ' INR '
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'prices : Yatra',
+            data:[]
+        },
+        {
+            name: 'prices : Expedia',
+            data:[]
+
+        }]
+    });
+});
+
+
+
+
+
+    </script>
+
+</head>
+
+
+<body>
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="http://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="/date.js"></script>
+
+    
+    <br>
+
+    <hr>
+        <br>
+     <br>
+    <div id="container"  style="height: 300px"></div>
+    <br>
+    <br>
+
+    <br>
+
+    <hr>
+        <br>
+     <br>
+    <div id="container1"  style="height: 300px"></div>
+    <br>
+    <br>
+
+    <br>
+
+    <hr>
+        <br>
+     <br>
+    <div id="container2"  style="height: 300px"></div>
+    <br>
+    <br>
+    <br>
+     <br>
+    
+    <br>
+    <br>
+</body>
+</html>

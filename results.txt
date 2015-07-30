@@ -1,0 +1,16 @@
+Air India1	03:15	05:25	2h 10m	Rs. 3,330
+Air India2	23:00	01:10 (14 May)	2h 10m	Rs. 3,750
+SpiceJet	07:35	09:45	2h 10m	Rs. 4,000
+GoAir	14:20	16:15	1h 55m	Rs. 4,173
+IndiGo	05:30	07:45	2h 15m	Rs. 4,178
+IndiGo	12:55	15:25	2h 30m	Rs. 4,178
+IndiGo	14:55	16:55	2h 00m	Rs. 4,178
+Vistara	06:15	08:20	2h 05m	Rs. 4,558
+Vistara	12:00	14:05	2h 05m	Rs. 4,558
+SpiceJet	15:40	17:40	2h 00m	Rs. 4,725
+Air India1	03:15	05:25	2h 10m	Rs. 1,330
+SpiceJet	07:35	09:45	2h 10m	Rs. 4,000
+GoAir	14:20	16:15	1h 55m	Rs. 4,173
+IndiGo	05:30	07:45	2h 15m	Rs. 4,178
+IndiGo	12:55	15:25	2h 30m	Rs. 4,178
+IndiGo	14:55	16:55	2h 00m	Rs. 4,174
